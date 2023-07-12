@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    users: ["s"]
+    users: []
   }
 
   componentDidMount(){
@@ -23,9 +23,15 @@ class App extends Component {
 
   }
   render(){
+    const users = this.state.users.map(user => (
+      <div key={user.id}>
+        <h4>{user.name}</h4>
+        <p>{user.address.city}</p>
+      </div>
+    ))
   return (
     <div className="App">
-      ok
+      {users};
     </div>
   );
 }
